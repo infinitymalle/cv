@@ -1,18 +1,16 @@
 import type { Project } from "../../api/client";
-
-const monthFormat = new Intl.DateTimeFormat("en-GB", { month: "short", year: "numeric" });
-
-function formatPeriod(startedOn: string, finishedOn: string | null): string {
-  const start = monthFormat.format(new Date(startedOn));
-  return `${start} – ${finishedOn ? monthFormat.format(new Date(finishedOn)) : "present"}`;
-}
+import { useLanguage, useTranslations } from "../../i18n/LanguageContext";
+import { formatPeriod } from "../../lib/format";
 
 export function ProjectCard({ project }: { project: Project }) {
+  const { language } = useLanguage();
+  const t = useTranslations();
+
   return (
-    <article className="project-card">
-      <header>
+    <article className="card">
+      <header className="card-header">
         <h3>{project.title}</h3>
-        <p className="muted">{formatPeriod(project.startedOn, project.finishedOn)}</p>
+        <p className="muted small">{formatPeriod(project.startedOn, project.finishedOn, language, t.present)}</p>
       </header>
 
       <p>{project.summary}</p>
@@ -27,7 +25,7 @@ export function ProjectCard({ project }: { project: Project }) {
 
       {project.repositoryUrl && (
         <a href={project.repositoryUrl} target="_blank" rel="noopener noreferrer">
-          Source code
+          {t.sourceCode}
         </a>
       )}
     </article>

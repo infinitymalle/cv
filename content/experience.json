@@ -1,0 +1,92 @@
+[
+  {
+    "organization": { "en": "Luleå University of Technology & Future Ordering", "sv": "Luleå tekniska universitet & Future Ordering" },
+    "role": { "en": "Developer", "sv": "Utvecklare" },
+    "location": "Luleå",
+    "startedOn": "2024-09-01",
+    "finishedOn": "2025-01-31",
+    "highlights": [
+      {
+        "en": "Developed backend APIs in C# (Azure Functions) in a team of eight: three endpoints for order filtering, queue position and queue status.",
+        "sv": "Utvecklade backend-API:er i C# (Azure Functions) i ett team om åtta: tre endpoints för orderfiltrering, köposition och köstatus."
+      },
+      {
+        "en": "Set up and secured an Asterisk telephony server (VoIP/SIP) in Azure, including WebRTC/TLS communication and automated certificate management (Certbot).",
+        "sv": "Satte upp och säkrade en Asterisk-telefoniserver (VoIP/SIP) i Azure, inklusive WebRTC/TLS-kommunikation och automatiserad certifikathantering (Certbot)."
+      },
+      {
+        "en": "Structured the Git workflow for another sub-team, making the project's deliveries more reliable.",
+        "sv": "Strukturerade upp Git-arbetsflödet för ett annat delteam, vilket stärkte projektets leveranssäkerhet."
+      }
+    ]
+  },
+  {
+    "organization": "Bravura / Atea",
+    "role": { "en": "Security Analyst", "sv": "Säkerhetsanalytiker" },
+    "location": "Luleå",
+    "startedOn": "2023-05-01",
+    "finishedOn": "2024-01-31",
+    "highlights": [
+      {
+        "en": "Monitored and analysed security events in a SOC environment to identify and escalate potential threats.",
+        "sv": "Arbetade i SOC-miljö med övervakning och analys av säkerhetshändelser för att identifiera och eskalera potentiella hot."
+      },
+      {
+        "en": "Documented incidents and anomalies, and escalated cases to the right specialist team according to established procedures.",
+        "sv": "Dokumenterade incidenter och avvikelser samt eskalerade ärenden till rätt specialistfunktion enligt fastställda rutiner."
+      }
+    ]
+  },
+  {
+    "organization": "Lärarpartner",
+    "role": { "en": "Substitute Teacher", "sv": "Lärarvikarie" },
+    "location": { "en": "Gothenburg", "sv": "Göteborg" },
+    "startedOn": "2020-01-01",
+    "finishedOn": "2020-06-30",
+    "highlights": [
+      {
+        "en": "Taught full classes in middle and lower secondary school, focusing on mathematics, natural sciences and technology.",
+        "sv": "Ansvarade för undervisning i helklass för mellan- och högstadieelever, med tyngdpunkt på matematik, naturorienterande ämnen och teknik."
+      }
+    ]
+  },
+  {
+    "organization": "AB Bemanningskontoret / Telia",
+    "role": { "en": "Technical Support", "sv": "Teknisk support" },
+    "location": { "en": "Gothenburg", "sv": "Göteborg" },
+    "startedOn": "2019-06-01",
+    "finishedOn": "2020-01-31",
+    "highlights": [
+      {
+        "en": "Troubleshot and installed network equipment, digital TV and landline telephony, and supported customers with mobile services.",
+        "sv": "Hanterade teknisk felsökning och installation av nätverksutrustning, digital-TV och fast telefoni samt gav support för mobila tjänster."
+      }
+    ]
+  },
+  {
+    "organization": { "en": "Region Västra Götaland", "sv": "Västra Götalandsregionen" },
+    "role": { "en": "Kitchen and Restaurant Staff", "sv": "Storkök och restaurang" },
+    "location": { "en": "Gothenburg", "sv": "Göteborg" },
+    "startedOn": "2018-06-01",
+    "finishedOn": "2018-08-31",
+    "highlights": [
+      {
+        "en": "Food preparation and service at Östra Hospital, in both the hospital kitchen and the staff restaurant Gastronomen.",
+        "sv": "Arbetade med matberedning och service vid Östra sjukhuset, både i sjukhusköket och i personalrestaurangen Gastronomen."
+      }
+    ]
+  },
+  {
+    "organization": { "en": "Region Västra Götaland", "sv": "Västra Götalandsregionen" },
+    "role": { "en": "Summer Job at a Care Home", "sv": "Feriearbete på äldreboende" },
+    "location": { "en": "Gothenburg", "sv": "Göteborg" },
+    "startedOn": "2017-06-01",
+    "finishedOn": "2017-08-31",
+    "highlights": [
+      {
+        "en": "Responsible for meal service and social activities with the residents to support a good quality of life.",
+        "sv": "Ansvarade för måltidsservice och social samvaro med de boende för att främja en god livskvalitet."
+      }
+    ]
+  }
+]

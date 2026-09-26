@@ -1,7 +1,7 @@
 [
   {
     "slug": "test-project-old",
-    "title": "Old test project",
+    "title": { "en": "Old test project", "sv": "Gammalt testprojekt" },
     "summary": "Used by the integration tests.",
     "technologies": ["C#"],
     "startedOn": "2024-01-01",

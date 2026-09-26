@@ -1,26 +1,26 @@
+import { AsyncContent } from "../../components/AsyncContent";
+import { useTranslations } from "../../i18n/LanguageContext";
 import { ProjectCard } from "./ProjectCard";
-import { useProjects } from "./useProjects";
+import { useProjects } from "./queries";
 
 export function ProjectList() {
-  const state = useProjects();
+  const t = useTranslations();
 
-  switch (state.status) {
-    case "loading":
-      return <p className="muted">Loading projects…</p>;
-    case "error":
-      return <p role="alert">Projects could not be loaded right now.</p>;
-    case "success":
-      if (state.projects.length === 0) {
-        return <p className="muted">No projects yet.</p>;
+  return (
+    <AsyncContent query={useProjects()}>
+      {(projects) =>
+        projects.length === 0 ? (
+          <p className="muted">{t.noProjects}</p>
+        ) : (
+          <ul className="card-list">
+            {projects.map((project) => (
+              <li key={project.slug}>
+                <ProjectCard project={project} />
+              </li>
+            ))}
+          </ul>
+        )
       }
-      return (
-        <ul className="project-list">
-          {state.projects.map((project) => (
-            <li key={project.slug}>
-              <ProjectCard project={project} />
-            </li>
-          ))}
-        </ul>
-      );
-  }
+    </AsyncContent>
+  );
 }

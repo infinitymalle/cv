@@ -22,9 +22,11 @@ Browser ──HTTPS──► Caddy (web container)
 
 ```
 backend/src/
-├─ Cv.Domain/          Core types (Project). Depends on nothing.
-├─ Cv.Application/     Logic + interfaces (IProjectService, IProjectRepository). Depends on Domain.
-├─ Cv.Infrastructure/  How data is stored (JsonProjectRepository). Implements Application's interfaces.
+├─ Cv.Domain/          Core types: Profile, Project, TimelineEntry, Course, Language, LocalizedText.
+│                      Depends on nothing.
+├─ Cv.Application/     One service per feature + repository interfaces; turns domain objects into
+│                      DTOs in the requested language. Depends on Domain.
+├─ Cv.Infrastructure/  How data is stored: JSON repositories over content/. Implements Application's interfaces.
 └─ Cv.Api/             HTTP: endpoints, security middleware, wiring (Program.cs).
 ```
 
@@ -37,12 +39,16 @@ changing one line in `Cv.Infrastructure/DependencyInjection.cs`.
 
 ```
 frontend/src/
-├─ app/                 App shell / layout
-├─ api/                 Typed API client; schema.d.ts is GENERATED from the backend
-└─ features/projects/   Everything for one feature: data fetching, hook, components, tests
+├─ app/          App shell: providers, top bar, page layout
+├─ api/          Typed API client; schema.d.ts is GENERATED from the backend
+├─ i18n/         Current language (context + switch state) and UI texts in en/sv
+├─ components/   Shared UI: language switch, flags, sections, loading/error states
+├─ lib/          Formatting helpers (dates, numbers per language)
+└─ features/     One folder per section: profile, projects, timeline, courses, skills
+                 Each has <x>Api.ts (fetch), queries.ts (React Query hook), components, tests
 ```
 
-New sections of the site (courses, experience, ...) get their own folder under `features/`.
+Data fetching uses TanStack Query. Each language is cached separately, so switching back is instant.
 
 ### The API contract
 
@@ -86,17 +92,49 @@ Dependabot (`.github/dependabot.yml`) opens weekly PRs for dependency updates, a
 
 ## Editing content
 
-Edit `content/projects.json`. No code changes or rebuild needed, since the API reads the file on each request.
+All CV content lives in `content/`. No code changes or rebuild needed, since the API reads the files on each request.
+
+| File | Section |
+|---|---|
+| `profile.json` | Name, headline, summary, links, skills, spoken languages |
+| `projects.json` | Projects |
+| `experience.json` | Jobs |
+| `education.json` | Schools / programmes |
+| `courses.json` | Completed courses (no grades) |
+
+Any text can be written in two ways:
+
+```jsonc
+"role": { "en": "Developer", "sv": "Utvecklare" }   // translated
+"organization": "Bravura / Atea"                       // same in every language
+```
+
+`dotnet test` checks the real content files: they must parse, and every translated text must have
+both `en` and `sv`. A mistake fails CI before it reaches the site. Unknown fields are rejected too, so typos are caught.
+
+Personal documents (CV PDF, transcripts) go in `private/`, which git ignores.
+
+## Languages
+
+The site is in English and Swedish, switched with the flag slider at the top. The first visit uses the
+browser's language, and the choice is remembered. The API takes `?lang=en|sv` (default `en`).
+
+Adding a language: add it to `Language.Supported` (backend), add translations to `content/`,
+add its UI texts to `frontend/src/i18n/translations.ts` and its locale in `language.ts`, and a flag/control
+in the switch. The API contract and the content test point out anything missing.
 
 ## Adding a new feature (e.g. "courses")
 
-1. **Domain:** add `Cv.Domain/Courses/Course.cs`
-2. **Application:** add `ICourseRepository`, `CourseDto`, `ICourseService` + `CourseService`; register in `DependencyInjection.cs`
-3. **Infrastructure:** add `JsonCourseRepository`; register it
-4. **Api:** add `Endpoints/CourseEndpoints.cs`; map it in `Program.cs`
-5. **Tests:** unit test the service with a fake repository; add integration tests
-6. `dotnet build`, then `npm run gen:api` in `frontend/`
-7. **Frontend:** add `features/courses/` and use it in `App.tsx`
+The Courses feature is a complete example to copy:
+
+1. **Domain:** `Cv.Domain/Courses/Course.cs` (use `LocalizedText` for anything translatable)
+2. **Application:** `ICourseRepository`, `CourseDto`, `ICourseService` + `CourseService`; register in `DependencyInjection.cs`
+3. **Infrastructure:** `JsonCourseRepository` using `JsonContentReader`; register it
+4. **Api:** `Endpoints/CourseEndpoints.cs` with a `Language? lang` parameter; map it in `Program.cs`
+5. **Content:** `content/courses.json`, and add the endpoint to `RealContentTests`
+6. **Tests:** unit test the service with a fake repository; add integration tests
+7. `dotnet build`, then `npm run gen:api` in `frontend/`
+8. **Frontend:** `features/courses/` (api, queries, section, test); add it to `App.tsx` and the top bar
 
 ## Deploying (Docker)
 

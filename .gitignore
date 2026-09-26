@@ -22,3 +22,6 @@ Thumbs.db
 
 # Logs
 *.log
+
+# Personal source documents (CV, transcripts). Never committed.
+private/

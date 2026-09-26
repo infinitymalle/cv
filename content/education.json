@@ -1,0 +1,29 @@
+[
+  {
+    "organization": { "en": "Luleå University of Technology", "sv": "Luleå tekniska universitet" },
+    "role": {
+      "en": "Master of Science in Engineering, Computer Science and Engineering",
+      "sv": "Civilingenjör i datateknik"
+    },
+    "location": "Luleå",
+    "startedOn": "2020-09-01",
+    "finishedOn": null,
+    "highlights": [
+      {
+        "en": "Specialisation: Information and Communication Technology.",
+        "sv": "Inriktning: Informations- och kommunikationsteknik."
+      },
+      {
+        "en": "Expected graduation: spring 2027 (master's thesis remaining).",
+        "sv": "Förväntad examen: våren 2027 (examensarbete återstår)."
+      }
+    ]
+  },
+  {
+    "organization": "Hulebäcksgymnasiet",
+    "role": { "en": "Natural Science Programme (upper secondary)", "sv": "Naturvetenskapsprogrammet" },
+    "location": { "en": "Gothenburg", "sv": "Göteborg" },
+    "startedOn": "2016-08-01",
+    "finishedOn": "2019-06-30"
+  }
+]

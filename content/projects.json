@@ -1,20 +1,38 @@
 [
   {
     "slug": "cv-website",
-    "title": "CV website",
-    "summary": "This site. An ASP.NET Core API with a layered architecture, a React + TypeScript frontend, and Docker + Caddy for hosting.",
-    "technologies": ["C#", "ASP.NET Core", "React", "TypeScript", "Docker", "Caddy"],
+    "title": { "en": "CV website", "sv": "CV-webbplats" },
+    "summary": {
+      "en": "This site. An ASP.NET Core API with a layered architecture, a bilingual React + TypeScript frontend, automated tests on every push, and Docker + Caddy for hosting with HTTPS.",
+      "sv": "Den här webbplatsen. Ett ASP.NET Core-API med skiktad arkitektur, en tvåspråkig frontend i React + TypeScript, automatiska tester vid varje push samt Docker + Caddy för drift med HTTPS."
+    },
+    "technologies": ["C#", "ASP.NET Core", "React", "TypeScript", "Docker", "Caddy", "GitHub Actions"],
     "startedOn": "2026-09-26",
     "finishedOn": null,
+    "repositoryUrl": "https://github.com/infinitymalle/cv"
+  },
+  {
+    "slug": "fo-car",
+    "title": "FO.Car",
+    "summary": {
+      "en": "Project course (15 credits) carried out with Future Ordering in a team of eight. I built backend endpoints in C# on Azure Functions for order filtering, queue position and queue status, and set up and secured an Asterisk VoIP/SIP server in Azure with WebRTC/TLS and automated certificate management.",
+      "sv": "Projektkurs (15 hp) som genomfördes tillsammans med Future Ordering i ett team om åtta. Jag byggde backend-endpoints i C# på Azure Functions för orderfiltrering, köposition och köstatus, samt satte upp och säkrade en Asterisk-server för VoIP/SIP i Azure med WebRTC/TLS och automatiserad certifikathantering."
+    },
+    "technologies": ["C#", "Azure Functions", "Asterisk", "VoIP/SIP", "WebRTC", "TLS", "Certbot", "Git"],
+    "startedOn": "2024-09-01",
+    "finishedOn": "2025-01-21",
     "repositoryUrl": null
   },
   {
-    "slug": "example-course-project",
-    "title": "Example course project (replace me)",
-    "summary": "A placeholder showing the format. Edit content/projects.json to add your own projects; no code changes needed.",
-    "technologies": ["Java"],
-    "startedOn": "2025-01-20",
-    "finishedOn": "2025-03-14",
-    "repositoryUrl": "https://github.com/"
+    "slug": "poa-delegation",
+    "title": "Power of attorney (PoA) based sub-granting and delegation",
+    "summary": {
+      "en": "Project course (15 credits) in computer engineering on power-of-attorney (PoA) based sub-granting and delegation of permissions.",
+      "sv": "Projektkurs (15 hp) i datateknik om fullmaktsbaserad (power of attorney, PoA) delegering och vidaredelegering av behörigheter."
+    },
+    "technologies": [],
+    "startedOn": "2022-11-01",
+    "finishedOn": "2023-03-25",
+    "repositoryUrl": null
   }
 ]

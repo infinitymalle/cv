@@ -1,9 +1,6 @@
-import { api, type Project } from "../../api/client";
+import { api, langQuery, unwrap, type Project } from "../../api/client";
+import type { Language } from "../../i18n/language";
 
-export async function fetchProjects(signal?: AbortSignal): Promise<Project[]> {
-  const { data, error } = await api.GET("/api/v1/projects", { signal });
-  if (error || !data) {
-    throw new Error("Could not load projects");
-  }
-  return data;
+export async function fetchProjects(language: Language, signal: AbortSignal): Promise<Project[]> {
+  return unwrap(await api.GET("/api/v1/projects", { ...langQuery(language), signal }), "projects");
 }

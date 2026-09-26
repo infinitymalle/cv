@@ -1,0 +1,4 @@
+[
+  { "name": "Discrete Mathematics", "credits": 7.5, "level": "basic", "completedOn": "2021-01-13" },
+  { "name": { "en": "Real-Time Systems", "sv": "Realtidssystem" }, "credits": 15.0, "level": "advanced", "completedOn": "2022-05-30", "highlighted": true }
+]

@@ -1,4 +1,7 @@
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using Cv.Api.Endpoints;
+using Cv.Api.OpenApi;
 using Cv.Api.Security;
 using Cv.Application;
 using Cv.Infrastructure;
@@ -16,13 +19,24 @@ builder.Services
     .AddInfrastructure(builder.Configuration, builder.Environment.ContentRootPath)
     .AddApiSecurity(builder.Configuration);
 
+builder.Services.ConfigureHttpJsonOptions(options =>
+{
+    // Enums as "advanced" rather than 1, and numbers as plain JSON numbers (keeps the OpenAPI types exact).
+    options.SerializerOptions.Converters.Add(new JsonStringEnumConverter(JsonNamingPolicy.CamelCase));
+    options.SerializerOptions.NumberHandling = JsonNumberHandling.Strict;
+});
+
 builder.Services.AddProblemDetails();
-builder.Services.AddOpenApi();
+builder.Services.AddOpenApi(options => options.AddOperationTransformer<LanguageParameterTransformer>());
 builder.Services.AddHealthChecks();
 
 var app = builder.Build();
 
-app.UseExceptionHandler();
+app.UseExceptionHandler(new ExceptionHandlerOptions
+{
+    // Bad input (e.g. ?lang=xx) is the client's fault: keep its 400 instead of turning it into a 500.
+    StatusCodeSelector = ex => ex is BadHttpRequestException bad ? bad.StatusCode : StatusCodes.Status500InternalServerError,
+});
 app.UseStatusCodePages();
 app.UseApiSecurity();
 
@@ -32,6 +46,11 @@ if (app.Environment.IsDevelopment())
 }
 
 app.MapHealthChecks("/health");
-app.MapGroup("/api/v1").MapProjectEndpoints();
+
+var api = app.MapGroup("/api/v1");
+api.MapProfileEndpoints();
+api.MapProjectEndpoints();
+api.MapTimelineEndpoints();
+api.MapCourseEndpoints();
 
 app.Run();

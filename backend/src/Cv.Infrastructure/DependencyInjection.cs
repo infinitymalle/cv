@@ -1,4 +1,7 @@
+using Cv.Application.Courses;
+using Cv.Application.Profiles;
 using Cv.Application.Projects;
+using Cv.Application.Timeline;
 using Cv.Infrastructure.Content;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -18,8 +21,13 @@ public static class DependencyInjection
             .Validate(o => Directory.Exists(o.RootPath), "Content:RootPath must point to an existing folder.")
             .ValidateOnStart();
 
-        // The one line to change when moving from JSON files to a database.
+        services.AddSingleton<JsonContentReader>();
+
+        // Where each kind of content comes from. Moving one to a database = change its line here.
+        services.AddScoped<IProfileRepository, JsonProfileRepository>();
         services.AddScoped<IProjectRepository, JsonProjectRepository>();
+        services.AddScoped<ITimelineRepository, JsonTimelineRepository>();
+        services.AddScoped<ICourseRepository, JsonCourseRepository>();
 
         return services;
     }

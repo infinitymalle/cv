@@ -27,6 +27,25 @@ public class ProjectEndpointsTests(CvApiFactory factory) : IClassFixture<CvApiFa
         Assert.Equal("Old test project", project.Title);
     }
 
+    [Fact]
+    public async Task Lang_query_selects_the_language()
+    {
+        var project = await _client.GetFromJsonAsync<ProjectDto>("/api/v1/projects/test-project-old?lang=sv", Ct);
+
+        Assert.Equal("Gammalt testprojekt", project?.Title);
+    }
+
+    [Theory]
+    [InlineData("/api/v1/projects?lang=de")]
+    [InlineData("/api/v1/profile?lang=<script>")]
+    [InlineData("/api/v1/courses?lang=")]
+    public async Task Unsupported_language_returns_400(string url)
+    {
+        var response = await _client.GetAsync(url, Ct);
+
+        Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
+    }
+
     [Theory]
     [InlineData("/api/v1/projects/missing")]
     [InlineData("/api/v1/projects/..%2F..%2Fappsettings.json")]

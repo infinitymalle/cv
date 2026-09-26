@@ -1,0 +1,46 @@
+{
+  "name": "Malkolm Lundkvist",
+  "headline": {
+    "en": "Computer Science and Engineering student",
+    "sv": "Civilingenjörsstudent i datateknik"
+  },
+  "summary": {
+    "en": "Computer Science and Engineering student at Luleå University of Technology, specialising in Information and Communication Technology, with graduation expected in spring 2027. I have built backend APIs in C# on Azure, secured VoIP infrastructure in the cloud and monitored security events in a SOC. I enjoy building systems that are secure, well-structured and easy to extend.",
+    "sv": "Civilingenjörsstudent i datateknik vid Luleå tekniska universitet med inriktning mot informations- och kommunikationsteknik, med förväntad examen våren 2027. Jag har utvecklat backend-API:er i C# i Azure, säkrat VoIP-infrastruktur i molnet och övervakat säkerhetshändelser i en SOC-miljö. Jag gillar att bygga system som är säkra, välstrukturerade och lätta att bygga vidare på."
+  },
+  "links": [
+    { "label": "GitHub", "url": "https://github.com/infinitymalle" }
+  ],
+  "skills": [
+    {
+      "category": { "en": "Programming languages", "sv": "Programmeringsspråk" },
+      "items": ["C#", "Python", "Java", "C", "C++", "SQL", "Go", "Matlab"]
+    },
+    {
+      "category": { "en": "Tools & cloud", "sv": "Verktyg & moln" },
+      "items": ["Git", "Azure (Functions)", "VS Code", "IntelliJ", "MS Office"]
+    },
+    {
+      "category": { "en": "Security", "sv": "Säkerhet" },
+      "items": [
+        { "en": "SOC analysis", "sv": "SOC-analys" },
+        { "en": "Log analysis", "sv": "Logganalys" },
+        { "en": "Incident handling", "sv": "Incidenthantering" }
+      ]
+    },
+    {
+      "category": { "en": "Other", "sv": "Övrigt" },
+      "items": [
+        { "en": "Driving licence (B)", "sv": "B-körkort" },
+        {
+          "en": "Safety training aboard M/S Aténe: fire safety, first aid, leadership and communication",
+          "sv": "Säkerhetsutbildning ombord på M/S Aténe: brandsäkerhet, sjukvård, ledarskap och kommunikation"
+        }
+      ]
+    }
+  ],
+  "languages": [
+    { "name": { "en": "Swedish", "sv": "Svenska" }, "proficiency": { "en": "Native", "sv": "Modersmål" } },
+    { "name": { "en": "English", "sv": "Engelska" }, "proficiency": { "en": "Fluent", "sv": "Flytande" } }
+  ]
+}

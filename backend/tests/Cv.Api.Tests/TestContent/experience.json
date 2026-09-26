@@ -1,0 +1,10 @@
+[
+  {
+    "organization": "Test Company",
+    "role": { "en": "Developer", "sv": "Utvecklare" },
+    "location": { "en": "Gothenburg", "sv": "Göteborg" },
+    "startedOn": "2024-09-01",
+    "finishedOn": "2025-01-31",
+    "highlights": [{ "en": "Built APIs.", "sv": "Byggde API:er." }]
+  }
+]

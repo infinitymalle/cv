@@ -1,19 +1,36 @@
+import { Section } from "../components/Section";
+import { TopBar } from "./TopBar";
+import { Hero } from "../features/profile/Hero";
 import { ProjectList } from "../features/projects/ProjectList";
+import { ExperienceSection, EducationSection } from "../features/timeline/TimelineSections";
+import { CoursesSection } from "../features/courses/CoursesSection";
+import { SkillsSection } from "../features/skills/SkillsSection";
+import { useTranslations } from "../i18n/LanguageContext";
 
 export function App() {
-  return (
-    <div className="page">
-      <header className="page-header">
-        <h1>Malkolm Lundkvist</h1>
-        <p className="tagline">Computer Science and Engineering student</p>
-      </header>
+  const t = useTranslations();
 
-      <main>
-        <section aria-labelledby="projects-heading">
-          <h2 id="projects-heading">Projects</h2>
-          <ProjectList />
-        </section>
-      </main>
-    </div>
+  return (
+    <>
+      <TopBar />
+      <div className="page">
+        <Hero />
+        <main>
+          <Section id="projects" title={t.nav.projects}>
+            <ProjectList />
+          </Section>
+          <ExperienceSection />
+          <EducationSection />
+          <CoursesSection />
+          <SkillsSection />
+        </main>
+        <footer className="footer muted small">
+          {t.footer}{" "}
+          <a href="https://github.com/infinitymalle/cv" target="_blank" rel="noopener noreferrer">
+            {t.footerSource}
+          </a>
+        </footer>
+      </div>
+    </>
   );
 }

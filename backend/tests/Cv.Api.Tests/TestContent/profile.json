@@ -1,0 +1,8 @@
+{
+  "name": "Test Person",
+  "headline": { "en": "Student", "sv": "Studerande" },
+  "summary": "Used by the integration tests.",
+  "links": [{ "label": "GitHub", "url": "https://github.com/example" }],
+  "skills": [{ "category": { "en": "Programming languages", "sv": "Programmeringsspråk" }, "items": ["C#", "Python"] }],
+  "languages": [{ "name": { "en": "Swedish", "sv": "Svenska" }, "proficiency": { "en": "Native", "sv": "Modersmål" } }]
+}

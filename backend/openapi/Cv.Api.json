@@ -5,12 +5,168 @@
     "version": "1.0.0"
   },
   "paths": {
+    "/api/v1/profile": {
+      "get": {
+        "tags": [
+          "Profile"
+        ],
+        "operationId": "GetProfile",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "query",
+            "description": "Content language. Defaults to \"en\".",
+            "schema": {
+              "enum": [
+                "en",
+                "sv"
+              ],
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProfileDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/experience": {
+      "get": {
+        "tags": [
+          "Timeline"
+        ],
+        "operationId": "GetExperience",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "query",
+            "description": "Content language. Defaults to \"en\".",
+            "schema": {
+              "enum": [
+                "en",
+                "sv"
+              ],
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TimelineEntryDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/education": {
+      "get": {
+        "tags": [
+          "Timeline"
+        ],
+        "operationId": "GetEducation",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "query",
+            "description": "Content language. Defaults to \"en\".",
+            "schema": {
+              "enum": [
+                "en",
+                "sv"
+              ],
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TimelineEntryDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/courses": {
+      "get": {
+        "tags": [
+          "Courses"
+        ],
+        "operationId": "GetCourses",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "query",
+            "description": "Content language. Defaults to \"en\".",
+            "schema": {
+              "enum": [
+                "en",
+                "sv"
+              ],
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CourseOverviewDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/v1/projects": {
       "get": {
         "tags": [
           "Projects"
         ],
         "operationId": "GetProjects",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "query",
+            "description": "Content language. Defaults to \"en\".",
+            "schema": {
+              "enum": [
+                "en",
+                "sv"
+              ],
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK",
@@ -42,6 +198,18 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "lang",
+            "in": "query",
+            "description": "Content language. Defaults to \"en\".",
+            "schema": {
+              "enum": [
+                "en",
+                "sv"
+              ],
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -64,6 +232,115 @@
   },
   "components": {
     "schemas": {
+      "CourseDto": {
+        "required": [
+          "name",
+          "credits",
+          "level",
+          "completedOn",
+          "highlighted"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "credits": {
+            "type": "number",
+            "format": "double"
+          },
+          "level": {
+            "$ref": "#/components/schemas/CourseLevel"
+          },
+          "completedOn": {
+            "type": "string",
+            "format": "date"
+          },
+          "highlighted": {
+            "type": "boolean"
+          }
+        }
+      },
+      "CourseLevel": {
+        "enum": [
+          "basic",
+          "advanced"
+        ]
+      },
+      "CourseOverviewDto": {
+        "required": [
+          "totalCredits",
+          "courses"
+        ],
+        "type": "object",
+        "properties": {
+          "totalCredits": {
+            "type": "number",
+            "format": "double"
+          },
+          "courses": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CourseDto"
+            }
+          }
+        }
+      },
+      "LinkDto": {
+        "required": [
+          "label",
+          "url"
+        ],
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          }
+        }
+      },
+      "ProfileDto": {
+        "required": [
+          "name",
+          "headline",
+          "summary",
+          "links",
+          "skills",
+          "languages"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "headline": {
+            "type": "string"
+          },
+          "summary": {
+            "type": "string"
+          },
+          "links": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LinkDto"
+            }
+          },
+          "skills": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SkillGroupDto"
+            }
+          },
+          "languages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SpokenLanguageDto"
+            }
+          }
+        }
+      },
       "ProjectDto": {
         "required": [
           "slug",
@@ -109,10 +386,94 @@
             ]
           }
         }
+      },
+      "SkillGroupDto": {
+        "required": [
+          "category",
+          "items"
+        ],
+        "type": "object",
+        "properties": {
+          "category": {
+            "type": "string"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "SpokenLanguageDto": {
+        "required": [
+          "name",
+          "proficiency"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "proficiency": {
+            "type": "string"
+          }
+        }
+      },
+      "TimelineEntryDto": {
+        "required": [
+          "organization",
+          "role",
+          "location",
+          "startedOn",
+          "finishedOn",
+          "highlights"
+        ],
+        "type": "object",
+        "properties": {
+          "organization": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          },
+          "location": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "startedOn": {
+            "type": "string",
+            "format": "date"
+          },
+          "finishedOn": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "date"
+          },
+          "highlights": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
       }
     }
   },
   "tags": [
+    {
+      "name": "Profile"
+    },
+    {
+      "name": "Timeline"
+    },
+    {
+      "name": "Courses"
+    },
     {
       "name": "Projects"
     }

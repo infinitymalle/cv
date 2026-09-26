@@ -1,5 +1,7 @@
 using Cv.Application.Projects;
+using Cv.Domain.Common;
 using Cv.Domain.Projects;
+using static Cv.Application.Tests.TestData;
 
 namespace Cv.Application.Tests.Projects;
 
@@ -14,20 +16,21 @@ public class ProjectServiceTests
             NewProject("old", startedOn: new DateOnly(2024, 1, 1)),
             NewProject("new", startedOn: new DateOnly(2026, 1, 1)));
 
-        var result = await service.GetAllAsync(Ct);
+        var result = await service.GetAllAsync(Language.English, Ct);
 
         Assert.Equal(["new", "old"], result.Select(p => p.Slug));
     }
 
     [Fact]
-    public async Task GetBySlugAsync_returns_matching_project()
+    public async Task Texts_are_returned_in_the_requested_language()
     {
-        var service = CreateService(NewProject("cv-website"));
+        var service = CreateService(NewProject("p") with { Title = Text("CV website", "CV-webbplats") });
 
-        var result = await service.GetBySlugAsync("cv-website", Ct);
+        var swedish = await service.GetBySlugAsync("p", Language.Swedish, Ct);
+        var english = await service.GetBySlugAsync("p", Language.English, Ct);
 
-        Assert.NotNull(result);
-        Assert.Equal("cv-website", result.Slug);
+        Assert.Equal("CV-webbplats", swedish?.Title);
+        Assert.Equal("CV website", english?.Title);
     }
 
     [Theory]
@@ -39,7 +42,7 @@ public class ProjectServiceTests
     {
         var service = CreateService(NewProject("cv-website"));
 
-        Assert.Null(await service.GetBySlugAsync(slug, Ct));
+        Assert.Null(await service.GetBySlugAsync(slug, Language.English, Ct));
     }
 
     [Theory]
@@ -50,7 +53,7 @@ public class ProjectServiceTests
     {
         var service = CreateService(NewProject("p") with { RepositoryUrl = new Uri(url) });
 
-        var result = await service.GetBySlugAsync("p", Ct);
+        var result = await service.GetBySlugAsync("p", Language.English, Ct);
 
         Assert.Equal(expected, result?.RepositoryUrl);
     }
@@ -61,8 +64,8 @@ public class ProjectServiceTests
     private static Project NewProject(string slug, DateOnly? startedOn = null) => new()
     {
         Slug = slug,
-        Title = slug,
-        Summary = "summary",
+        Title = Text(slug),
+        Summary = Text("summary"),
         StartedOn = startedOn ?? new DateOnly(2025, 1, 1),
     };
 
