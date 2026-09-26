@@ -21,6 +21,9 @@ public sealed record Course
 
     /// <summary>Courses especially relevant to the CV, shown first.</summary>
     public bool Highlighted { get; init; }
+
+    /// <summary>Optional explicit position in the list (1 = first). Unranked courses follow in the default order.</summary>
+    public int? Rank { get; init; }
 }
 
 /// <summary>Swedish "grundnivå" / "avancerad nivå" (first / second cycle).</summary>

@@ -100,7 +100,7 @@ All CV content lives in `content/`. No code changes or rebuild needed, since the
 | `projects.json` | Projects |
 | `experience.json` | Jobs |
 | `education.json` | Schools / programmes |
-| `courses.json` | Completed courses (no grades) |
+| `courses.json` | Completed courses (no grades). `highlighted` marks key courses; optional `rank` (1, 2, …) sets the order of the top courses |
 
 Any text can be written in two ways:
 

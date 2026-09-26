@@ -38,6 +38,19 @@ public class CourseServiceTests
     }
 
     [Fact]
+    public async Task Ranked_courses_come_first_in_rank_order()
+    {
+        var service = CreateService(
+            NewCourse("Key advanced") with { Highlighted = true, Level = CourseLevel.Advanced },
+            NewCourse("Ranked second") with { Rank = 2 },
+            NewCourse("Ranked first") with { Rank = 1 });
+
+        var overview = await service.GetOverviewAsync(Language.English, Ct);
+
+        Assert.Equal(["Ranked first", "Ranked second", "Key advanced"], overview.Courses.Select(c => c.Name));
+    }
+
+    [Fact]
     public async Task Course_names_are_returned_in_the_requested_language()
     {
         var service = CreateService(NewCourse("Real-Time Systems") with { Name = Text("Real-Time Systems", "Realtidssystem") });
