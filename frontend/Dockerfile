@@ -1,5 +1,5 @@
 # --- Build stage: compile the React app to static files ---
-FROM node:24-alpine AS build
+FROM node:26-alpine AS build
 WORKDIR /src
 COPY package.json package-lock.json ./
 RUN npm ci
