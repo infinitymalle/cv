@@ -14,7 +14,7 @@
   "skills": [
     {
       "category": { "en": "Programming languages", "sv": "Programmeringsspråk" },
-      "items": ["C#", "Python", "Java", "C", "C++", "SQL", "Go", "Matlab"]
+      "items": ["C#", "Python", "Java", "C", "C++", "SQL", "Go", "Matlab", "Haskell", "Prolog"]
     },
     {
       "category": { "en": "Tools & cloud", "sv": "Verktyg & moln" },

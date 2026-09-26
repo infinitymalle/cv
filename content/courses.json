@@ -265,6 +265,7 @@
     "credits": 7.5,
     "level": "advanced",
     "completedOn": "2024-12-11",
+    "highlighted": true,
     "summary": {
       "en": "Principles of distributed systems, from networking and peer-to-peer overlays to blockchain technologies such as Bitcoin and Ethereum. The main lab was implementing the Kademlia distributed hash table in a team, run as a series of sprints. Paper reviews, seminars and a home exam completed the course.",
       "sv": "Principer för distribuerade system, från nätverk och peer-to-peer-överlägg till blockkedjetekniker som Bitcoin och Ethereum. Huvudlaborationen var att i team implementera den distribuerade hashtabellen Kademlia, genomförd som en serie sprintar. Artikelgranskningar, seminarier och en hemtentamen kompletterade kursen."
