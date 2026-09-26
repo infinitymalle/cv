@@ -50,6 +50,10 @@ public class ContentEndpointsTests(CvApiFactory factory) : IClassFixture<CvApiFa
     {
         var overview = await _client.GetFromJsonAsync<JsonObject>("/api/v1/courses?lang=sv", Ct);
 
-        Assert.Equal("Realtidssystem", overview!["courses"]![0]!["name"]!.GetValue<string>());
+        var course = overview!["courses"]![0]!;
+        Assert.Equal("Realtidssystem", course["name"]!.GetValue<string>());
+        Assert.Equal("Schemaläggning och samtidighet.", course["summary"]!.GetValue<string>());
+        Assert.Equal("D0003E", course["code"]!.GetValue<string>());
+        Assert.Null(overview["courses"]![1]!["summary"]); // summaries are optional
     }
 }

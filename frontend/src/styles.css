@@ -331,15 +331,75 @@ a {
   margin: 0;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  align-items: start;
   gap: 0.5rem;
 }
 
-.key-courses li {
+.key-course {
   background: var(--surface);
   border: 1px solid var(--border);
   border-left: 3px solid var(--accent);
   border-radius: 0.375rem;
   padding: 0.5rem 0.75rem;
+}
+
+.course-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.75rem 0 0;
+}
+
+.course-row {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.course-heading {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  column-gap: 1rem;
+  flex: 1;
+}
+
+/* A course with a summary is a button that looks like the row itself, plus a chevron. */
+.course-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.course-toggle:hover .course-name {
+  color: var(--accent);
+}
+
+.chevron {
+  flex-shrink: 0;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-right: 2px solid var(--muted);
+  border-bottom: 2px solid var(--muted);
+  transform: rotate(45deg) translateY(-2px);
+  transition: transform 0.15s ease;
+}
+
+.course-toggle[aria-expanded="true"] .chevron {
+  transform: rotate(-135deg) translateX(-2px);
+}
+
+.course-summary {
+  margin: 0.5rem 0 0.25rem;
+  color: var(--muted);
+  font-size: 0.925rem;
 }
 
 .text-button {
@@ -354,19 +414,10 @@ a {
   text-underline-offset: 3px;
 }
 
-.course-list {
-  list-style: none;
-  padding: 0;
-  margin: 0.75rem 0 0;
-}
-
-.course-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  column-gap: 1rem;
-  padding: 0.5rem 0;
-  border-bottom: 1px solid var(--border);
+@media (prefers-reduced-motion: reduce) {
+  .chevron {
+    transition: none;
+  }
 }
 
 /* ---------- Skills ---------- */

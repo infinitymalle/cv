@@ -11,8 +11,24 @@ vi.mock("./coursesApi");
 const overview: CourseOverview = {
   totalCredits: 22.5,
   courses: [
-    { name: "Real-Time Systems", credits: 15, level: "advanced", completedOn: "2022-05-30", highlighted: true },
-    { name: "Discrete Mathematics", credits: 7.5, level: "basic", completedOn: "2021-01-13", highlighted: false },
+    {
+      name: "Real-Time Systems",
+      code: "D0003E",
+      summary: "Scheduling and concurrency in embedded systems.",
+      credits: 15,
+      level: "advanced",
+      completedOn: "2022-05-30",
+      highlighted: true,
+    },
+    {
+      name: "Discrete Mathematics",
+      code: null,
+      summary: null,
+      credits: 7.5,
+      level: "basic",
+      completedOn: "2021-01-13",
+      highlighted: false,
+    },
   ],
 };
 
@@ -29,7 +45,22 @@ describe("CoursesSection", () => {
     expect(screen.queryByText("Discrete Mathematics")).not.toBeInTheDocument();
   });
 
-  it("expands to show all courses", async () => {
+  it("expands a course to show its summary when clicked", async () => {
+    const user = userEvent.setup();
+    vi.mocked(fetchCourses).mockResolvedValue(overview);
+    renderWithProviders(<CoursesSection />);
+
+    const course = await screen.findByRole("button", { name: /Real-Time Systems/ });
+    expect(course).toHaveAttribute("aria-expanded", "false");
+    expect(screen.queryByText(/Scheduling and concurrency/)).not.toBeInTheDocument();
+
+    await user.click(course);
+
+    expect(course).toHaveAttribute("aria-expanded", "true");
+    expect(screen.getByText(/Scheduling and concurrency/)).toBeInTheDocument();
+  });
+
+  it("expands to show all courses; courses without a summary are not clickable", async () => {
     const user = userEvent.setup();
     vi.mocked(fetchCourses).mockResolvedValue(overview);
     renderWithProviders(<CoursesSection />);
@@ -37,7 +68,8 @@ describe("CoursesSection", () => {
     await user.click(await screen.findByRole("button", { name: "Show all 2 courses" }));
 
     expect(screen.getByText("Discrete Mathematics")).toBeInTheDocument();
-    expect(screen.getByText(/Basic level · 7.5 credits/)).toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: /Discrete Mathematics/ })).not.toBeInTheDocument();
+    expect(screen.getByText(/D0003E · Advanced level · 15 credits/)).toBeInTheDocument();
   });
 
   it("uses Swedish number format and texts", async () => {

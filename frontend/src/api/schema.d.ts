@@ -106,6 +106,8 @@ export interface components {
     schemas: {
         CourseDto: {
             name: string;
+            code: null | string;
+            summary: null | string;
             /** Format: double */
             credits: number;
             level: components["schemas"]["CourseLevel"];

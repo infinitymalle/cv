@@ -235,6 +235,8 @@
       "CourseDto": {
         "required": [
           "name",
+          "code",
+          "summary",
           "credits",
           "level",
           "completedOn",
@@ -244,6 +246,18 @@
         "properties": {
           "name": {
             "type": "string"
+          },
+          "code": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "summary": {
+            "type": [
+              "null",
+              "string"
+            ]
           },
           "credits": {
             "type": "number",

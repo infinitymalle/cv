@@ -6,6 +6,8 @@ public sealed record CourseOverviewDto(decimal TotalCredits, IReadOnlyList<Cours
 
 public sealed record CourseDto(
     string Name,
+    string? Code,
+    string? Summary,
     decimal Credits,
     CourseLevel Level,
     DateOnly CompletedOn,

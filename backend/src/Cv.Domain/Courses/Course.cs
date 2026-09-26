@@ -7,6 +7,12 @@ public sealed record Course
 {
     public required LocalizedText Name { get; init; }
 
+    /// <summary>The university's course code, e.g. "D0009E".</summary>
+    public string? Code { get; init; }
+
+    /// <summary>A short description of what the course covered.</summary>
+    public LocalizedText? Summary { get; init; }
+
     /// <summary>Higher education credits (hp); 1 hp = 1 ECTS credit.</summary>
     public required decimal Credits { get; init; }
 

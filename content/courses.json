@@ -1,35 +1,471 @@
 [
-  { "name": { "en": "Introduction to Programming", "sv": "Introduktion till programmering" }, "credits": 7.5, "level": "basic", "completedOn": "2020-10-30" },
-  { "name": { "en": "Computer Engineering and Engineering Science", "sv": "Datateknik och ingenjörsvetenskap" }, "credits": 7.5, "level": "basic", "completedOn": "2020-10-30" },
-  { "name": { "en": "Discrete Mathematics", "sv": "Diskret matematik" }, "credits": 7.5, "level": "basic", "completedOn": "2021-01-13" },
-  { "name": { "en": "Object-Oriented Programming and Design", "sv": "Objektorienterad programmering och design" }, "credits": 7.5, "level": "basic", "completedOn": "2021-03-26" },
-  { "name": { "en": "Microcomputer Engineering", "sv": "Mikrodatorteknik" }, "credits": 7.5, "level": "basic", "completedOn": "2021-10-30", "highlighted": true },
-  { "name": { "en": "Algorithms and Data Structures", "sv": "Algoritmer och datastrukturer" }, "credits": 7.5, "level": "basic", "completedOn": "2022-01-15" },
-  { "name": { "en": "Computer Communication", "sv": "Datorkommunikation" }, "credits": 7.5, "level": "basic", "completedOn": "2022-05-19" },
-  { "name": { "en": "Real-Time Systems", "sv": "Realtidssystem" }, "credits": 7.5, "level": "basic", "completedOn": "2022-05-30", "highlighted": true },
-  { "name": { "en": "Physics 3", "sv": "Fysik 3" }, "credits": 7.5, "level": "basic", "completedOn": "2022-08-23" },
-  { "name": { "en": "Computer and Network Security", "sv": "Dator- och nätverkssäkerhet" }, "credits": 7.5, "level": "basic", "completedOn": "2022-10-21", "highlighted": true },
-  { "name": { "en": "Differential Calculus", "sv": "Differentialkalkyl" }, "credits": 7.5, "level": "basic", "completedOn": "2022-10-27" },
-  { "name": { "en": "Project in Computer Engineering", "sv": "Projekt i datateknik" }, "credits": 15.0, "level": "basic", "completedOn": "2023-03-25" },
-  { "name": { "en": "Database Technology", "sv": "Databasteknik" }, "credits": 7.5, "level": "basic", "completedOn": "2023-03-31", "highlighted": true },
-  { "name": { "en": "Advanced Data Structures", "sv": "Avancerade datastrukturer" }, "credits": 7.5, "level": "advanced", "completedOn": "2023-10-16" },
-  { "name": { "en": "Machine Learning and Pattern Recognition", "sv": "Maskininlärning och mönsterigenkänning" }, "credits": 7.5, "level": "basic", "completedOn": "2023-12-13", "highlighted": true },
-  { "name": { "en": "Applied Artificial Intelligence", "sv": "Tillämpad artificiell intelligens" }, "credits": 7.5, "level": "advanced", "completedOn": "2024-01-15" },
-  { "name": { "en": "The Universe for the Curious", "sv": "Universum för nyfikna" }, "credits": 7.5, "level": "basic", "completedOn": "2024-05-16" },
-  { "name": { "en": "Physics 1", "sv": "Fysik 1" }, "credits": 7.5, "level": "basic", "completedOn": "2024-08-22" },
-  { "name": { "en": "Mobile and Distributed Computing Systems", "sv": "Mobila och distribuerade datorsystem" }, "credits": 7.5, "level": "advanced", "completedOn": "2024-12-11" },
-  { "name": { "en": "Advanced Project Management", "sv": "Avancerad projektledning" }, "credits": 7.5, "level": "advanced", "completedOn": "2025-01-08" },
-  { "name": { "en": "Design of Dynamic Web Systems", "sv": "Design av dynamiska webbsystem" }, "credits": 7.5, "level": "advanced", "completedOn": "2025-01-17" },
-  { "name": { "en": "Project in Information and Communication Technology", "sv": "Projekt i informations- och kommunikationsteknik" }, "credits": 15.0, "level": "advanced", "completedOn": "2025-01-21" },
-  { "name": { "en": "Neural Networks and Learning Machines", "sv": "Neuronnät och lärande maskiner" }, "credits": 7.5, "level": "advanced", "completedOn": "2025-03-28", "highlighted": true },
-  { "name": { "en": "Linear Algebra and Integral Calculus", "sv": "Linjär algebra och integralkalkyl" }, "credits": 7.5, "level": "basic", "completedOn": "2025-06-02" },
-  { "name": { "en": "Declarative Languages", "sv": "Deklarativa språk" }, "credits": 7.5, "level": "advanced", "completedOn": "2025-06-06" },
-  { "name": { "en": "Digital Electronics", "sv": "Digitalteknik" }, "credits": 7.5, "level": "basic", "completedOn": "2025-07-16" },
-  { "name": { "en": "Introductory Electrical Engineering", "sv": "Grundkurs i elektroteknik" }, "credits": 7.5, "level": "basic", "completedOn": "2025-10-30" },
-  { "name": { "en": "Linear Algebra and Differential Equations", "sv": "Linjär algebra och differentialekvationer" }, "credits": 7.5, "level": "basic", "completedOn": "2025-12-17" },
-  { "name": { "en": "Mathematical Statistics", "sv": "Matematisk statistik" }, "credits": 7.5, "level": "basic", "completedOn": "2026-01-15" },
-  { "name": { "en": "Quantum Physics for the Curious", "sv": "Kvantfysik för nyfikna" }, "credits": 7.5, "level": "basic", "completedOn": "2026-03-12" },
-  { "name": { "en": "Industrial Economics with a Sustainability Perspective", "sv": "Industriell ekonomi med ett hållbarhetsperspektiv" }, "credits": 7.5, "level": "basic", "completedOn": "2026-03-17" },
-  { "name": { "en": "Software Engineering", "sv": "Programvaruteknik" }, "credits": 7.5, "level": "advanced", "completedOn": "2026-06-18", "highlighted": true },
-  { "name": { "en": "Modelling and Control", "sv": "Modellering och reglering" }, "credits": 7.5, "level": "basic", "completedOn": "2026-08-26" }
+  {
+    "name": {
+      "en": "Introduction to Programming",
+      "sv": "Introduktion till programmering"
+    },
+    "code": "D0009E",
+    "credits": 7.5,
+    "level": "basic",
+    "completedOn": "2020-10-30",
+    "summary": {
+      "en": "A first course in programming using Python, covering variables, control flow, functions and built-in data structures. It then moves on to classes and objects, with exercises such as implementing a FIFO queue and small simulations. Weekly labs build up practical programming skills, and the course ends with a written exam.",
+      "sv": "En första kurs i programmering med Python som tar upp variabler, kontrollstrukturer, funktioner och inbyggda datastrukturer. Kursen går sedan vidare till klasser och objekt, med övningar som att implementera en FIFO-kö och små simuleringar. Veckovisa laborationer bygger upp praktisk programmeringsvana och kursen avslutas med en skriftlig tentamen."
+    }
+  },
+  {
+    "name": {
+      "en": "Computer Engineering and Engineering Science",
+      "sv": "Datateknik och ingenjörsvetenskap"
+    },
+    "code": "D0015E",
+    "credits": 7.5,
+    "level": "basic",
+    "completedOn": "2020-10-30",
+    "summary": {
+      "en": "An introduction to the computer engineering field and to working as an engineer. Modules covered the Unix environment, technical writing in LaTeX, the history of computing and engineering, web basics with HTML and CSS, and a hands-on lab with embedded systems. The course ended with a written report on research related to computer engineering.",
+      "sv": "En introduktion till datateknikområdet och till ingenjörsyrket. Kursen innehöll moment om Unix-miljön, teknisk rapportskrivning i LaTeX, datateknikens och ingenjörsvetenskapens historia, webbens grunder med HTML och CSS samt en praktisk laboration med inbyggda system. Kursen avslutades med en skriftlig rapport om datatekniknära forskning."
+    }
+  },
+  {
+    "name": {
+      "en": "Discrete Mathematics",
+      "sv": "Diskret matematik"
+    },
+    "code": "M0009M",
+    "credits": 7.5,
+    "level": "basic",
+    "completedOn": "2021-01-13",
+    "summary": {
+      "en": "The discrete mathematics that computer science builds on: combinatorics, graph theory and number theory. The course trained rigorous reasoning and proof techniques used later in algorithms and cryptography. It was examined with a series of short tests during the course and a final written exam.",
+      "sv": "Den diskreta matematik som datavetenskapen bygger på: kombinatorik, grafteori och talteori. Kursen tränade stringent resonemang och bevistekniker som senare används inom algoritmer och kryptografi. Examinationen bestod av en serie duggor under kursen och en avslutande skriftlig tentamen."
+    }
+  },
+  {
+    "name": {
+      "en": "Object-Oriented Programming and Design",
+      "sv": "Objektorienterad programmering och design"
+    },
+    "code": "D0010E",
+    "credits": 7.5,
+    "level": "basic",
+    "completedOn": "2021-03-26",
+    "summary": {
+      "en": "Object-oriented programming and design in Java, from imperative basics and recursion to dynamic objects modelled in UML. Topics included packages and access control, graphical user interfaces, the MVC pattern, inheritance, dynamic dispatch and polymorphism. Five labs ended in a larger project that was first designed and then implemented.",
+      "sv": "Objektorienterad programmering och design i Java, från imperativa grunder och rekursion till dynamiska objekt modellerade i UML. Kursen tog upp paket och åtkomst, grafiska gränssnitt, MVC-mönstret, arv, dynamisk bindning och polymorfism. Fem laborationer avslutades med ett större projekt som först designades och sedan implementerades."
+    }
+  },
+  {
+    "name": {
+      "en": "Microcomputer Engineering",
+      "sv": "Mikrodatorteknik"
+    },
+    "code": "D0013E",
+    "credits": 7.5,
+    "level": "basic",
+    "completedOn": "2021-10-30",
+    "highlighted": true,
+    "summary": {
+      "en": "How computers work at the hardware-software boundary: processor architecture, the memory hierarchy, virtual memory, caches and floating-point representation. Theory assignments were combined with a series of low-level programming labs. Lab solutions were handed in through GitLab and went through review before the final version.",
+      "sv": "Hur datorer fungerar i gränslandet mellan hårdvara och mjukvara: processorarkitektur, minneshierarki, virtuellt minne, cacheminnen och flyttalsrepresentation. Teoretiska uppgifter kombinerades med en serie laborationer i hårdvarunära programmering. Labblösningarna lämnades in via GitLab och granskades innan den slutliga versionen."
+    }
+  },
+  {
+    "name": {
+      "en": "Algorithms and Data Structures",
+      "sv": "Algoritmer och datastrukturer"
+    },
+    "code": "D0012E",
+    "credits": 7.5,
+    "level": "basic",
+    "completedOn": "2022-01-15",
+    "summary": {
+      "en": "Design and analysis of algorithms and the fundamental data structures used to implement them. The focus was on reasoning about correctness and time complexity when choosing between different solutions. Three programming labs, each documented in a written report, were combined with a written exam.",
+      "sv": "Design och analys av algoritmer samt de grundläggande datastrukturer som används för att implementera dem. Fokus låg på att resonera kring korrekthet och tidskomplexitet när man väljer mellan olika lösningar. Tre programmeringslaborationer, var och en dokumenterad i en skriftlig rapport, kombinerades med en skriftlig tentamen."
+    }
+  },
+  {
+    "name": {
+      "en": "Computer Communication",
+      "sv": "Datorkommunikation"
+    },
+    "code": "D0002E",
+    "credits": 7.5,
+    "level": "basic",
+    "completedOn": "2022-05-19",
+    "summary": {
+      "en": "How the internet and everyday networked applications actually work, following the protocol stack from physical links up to applications. Labs used Wireshark to capture and analyse real network traffic. The course was examined with midterm tests, lab reports and a written assignment.",
+      "sv": "Hur internet och vardagens nätverksapplikationer faktiskt fungerar, genom protokollstacken från fysiska länkar upp till applikationer. I laborationerna användes Wireshark för att fånga in och analysera verklig nätverkstrafik. Kursen examinerades med duggor, labbrapporter och en inlämningsuppgift."
+    }
+  },
+  {
+    "name": {
+      "en": "Real-Time Systems",
+      "sv": "Realtidssystem"
+    },
+    "code": "D0003E",
+    "credits": 7.5,
+    "level": "basic",
+    "completedOn": "2022-05-30",
+    "highlighted": true,
+    "summary": {
+      "en": "Programming concurrent and real-time systems on a microcontroller. Topics included mutual exclusion with shared variables, condition synchronisation, interrupt-driven programming and scheduling. Labs were done in pairs on Atmel AVR hardware, alongside a written exam.",
+      "sv": "Programmering av samtidiga system och realtidssystem på en mikrokontroller. Kursen tog upp ömsesidig uteslutning med delade variabler, villkorssynkronisering, avbrottsstyrd programmering och schemaläggning. Laborationerna gjordes i par på Atmel AVR-hårdvara, vid sidan av en skriftlig tentamen."
+    }
+  },
+  {
+    "name": {
+      "en": "Physics 3",
+      "sv": "Fysik 3"
+    },
+    "code": "F0006T",
+    "credits": 7.5,
+    "level": "basic",
+    "completedOn": "2022-08-23",
+    "summary": {
+      "en": "Continuation of mechanics into rotation and oscillation: centre of mass, moment of inertia, rotational kinematics and angular momentum. It also covered gravitation, non-constant acceleration and polar coordinates, and gave an introduction to relativity and nuclear physics. Labs in mechanics and modern physics accompanied hand-in assignments and a written exam.",
+      "sv": "Fortsättning inom mekanik med rotation och svängningar: masscentrum, masströghetsmoment, rotationskinematik och rörelsemängdsmoment. Kursen tog även upp gravitation, icke-konstant acceleration och polära koordinater samt gav en introduktion till relativitetsteori och kärnfysik. Laborationer i mekanik och modern fysik kompletterade inlämningsuppgifter och en skriftlig tentamen."
+    }
+  },
+  {
+    "name": {
+      "en": "Computer and Network Security",
+      "sv": "Dator- och nätverkssäkerhet"
+    },
+    "code": "D0029E",
+    "credits": 7.5,
+    "level": "basic",
+    "completedOn": "2022-10-21",
+    "highlighted": true,
+    "summary": {
+      "en": "Core concepts of computer and network security, from cryptography to real attack techniques. Hands-on labs covered message digests, symmetric and public-key encryption, TCP vulnerabilities, SQL injection and buffer overflow attacks. The course was examined with two midterm tests, the labs and a larger written assignment.",
+      "sv": "Grundläggande begrepp inom dator- och nätverkssäkerhet, från kryptografi till verkliga attacktekniker. Praktiska laborationer tog upp hashfunktioner, symmetrisk och asymmetrisk kryptering, sårbarheter i TCP, SQL-injektion och buffertöverflödesattacker. Kursen examinerades med två duggor, laborationerna och en större inlämningsuppgift."
+    }
+  },
+  {
+    "name": {
+      "en": "Differential Calculus",
+      "sv": "Differentialkalkyl"
+    },
+    "code": "M0047M",
+    "credits": 7.5,
+    "level": "basic",
+    "completedOn": "2022-10-27",
+    "summary": {
+      "en": "Single-variable differential calculus, the first part of infinitesimal calculus. It covered limits, continuity, derivatives and their applications to analysing functions and solving problems. A computer lab complemented the written exam.",
+      "sv": "Differentialkalkyl i en variabel, den första delen av infinitesimalkalkylen. Kursen tog upp gränsvärden, kontinuitet, derivator och deras tillämpningar för att analysera funktioner och lösa problem. En datorlaboration kompletterade den skriftliga tentamen."
+    }
+  },
+  {
+    "name": {
+      "en": "Project in Computer Engineering",
+      "sv": "Projekt i datateknik"
+    },
+    "code": "D0020E",
+    "credits": 15.0,
+    "level": "basic",
+    "completedOn": "2023-03-25",
+    "summary": {
+      "en": "A team software project over two study periods, run with Scrum and agile practices. Lessons covered testing, software development metrics, sustainability and gender equality in development teams, and progress was tracked with regular activity logs. The project, on power-of-attorney (PoA) based sub-granting and delegation, was documented in a project report.",
+      "sv": "Ett mjukvaruprojekt i grupp under två läsperioder som bedrevs med Scrum och agila arbetssätt. Lektionerna tog upp testning, mått för programutveckling, hållbarhet och jämställdhet i utvecklingsteam, och arbetet följdes upp med regelbundna aktivitetsloggar. Projektet, om fullmaktsbaserad (PoA) delegering och vidaredelegering, dokumenterades i en projektrapport."
+    }
+  },
+  {
+    "name": {
+      "en": "Database Technology",
+      "sv": "Databasteknik"
+    },
+    "code": "D0018E",
+    "credits": 7.5,
+    "level": "basic",
+    "completedOn": "2023-03-31",
+    "highlighted": true,
+    "summary": {
+      "en": "Database design and use, from the relational model and SQL to an overview of NoSQL databases. Theory was tested with quizzes and a written exam. In the lab part, a database-backed solution was built over four sprints with sprint planning and a final report.",
+      "sv": "Design och användning av databaser, från relationsmodellen och SQL till en översikt av NoSQL-databaser. Teorin examinerades med quiz och en skriftlig tentamen. I labbdelen byggdes en databasbaserad lösning under fyra sprintar med sprintplanering och en slutrapport."
+    }
+  },
+  {
+    "name": {
+      "en": "Advanced Data Structures",
+      "sv": "Avancerade datastrukturer"
+    },
+    "code": "D7067E",
+    "credits": 7.5,
+    "level": "advanced",
+    "completedOn": "2023-10-16",
+    "summary": {
+      "en": "Advanced data structures beyond the standard toolkit, studied through research papers and reference literature. The course consisted of a series of individual assignments followed by a project. Solutions required both implementing the structures and analysing their performance.",
+      "sv": "Avancerade datastrukturer bortom standardverktygen, studerade genom forskningsartiklar och referenslitteratur. Kursen bestod av en serie individuella uppgifter följda av ett projekt. Lösningarna krävde både implementation av strukturerna och analys av deras prestanda."
+    }
+  },
+  {
+    "name": {
+      "en": "Machine Learning and Pattern Recognition",
+      "sv": "Maskininlärning och mönsterigenkänning"
+    },
+    "code": "D0033E",
+    "credits": 7.5,
+    "level": "basic",
+    "completedOn": "2023-12-13",
+    "highlighted": true,
+    "summary": {
+      "en": "What it means for a machine to learn and classify, and why it is useful. Topics included data import and analysis, instance-based learning, clustering and decision-based classifiers, with weekly quizzes and summary reports. The course ended with a group project presented orally.",
+      "sv": "Vad det innebär att en maskin lär sig och klassificerar, och varför det är användbart. Kursen tog upp dataimport och dataanalys, instansbaserad inlärning, klustring och beslutsbaserade klassificerare, med veckovisa quiz och sammanfattande rapporter. Kursen avslutades med ett grupprojekt som presenterades muntligt."
+    }
+  },
+  {
+    "name": {
+      "en": "Applied Artificial Intelligence",
+      "sv": "Tillämpad artificiell intelligens"
+    },
+    "code": "D7041E",
+    "credits": 7.5,
+    "level": "advanced",
+    "completedOn": "2024-01-15",
+    "summary": {
+      "en": "Applied machine learning and AI through six labs: ML fundamentals, natural language processing, random hyperdimensional data representations, self-organising maps, neural networks with backpropagation, and recurrent neural networks. A mini-project applied these methods to a problem of our choice. Research articles were presented and discussed in seminars.",
+      "sv": "Tillämpad maskininlärning och AI genom sex laborationer: grunderna i maskininlärning, språkteknologi (NLP), slumpmässiga hyperdimensionella datarepresentationer, självorganiserande kartor, neuronnät med backpropagation och rekurrenta neuronnät. I ett miniprojekt tillämpades metoderna på ett eget valt problem. Forskningsartiklar presenterades och diskuterades på seminarier."
+    }
+  },
+  {
+    "name": {
+      "en": "The Universe for the Curious",
+      "sv": "Universum för nyfikna"
+    },
+    "code": "F0022T",
+    "credits": 7.5,
+    "level": "basic",
+    "completedOn": "2024-05-16",
+    "summary": {
+      "en": "A broad, accessible overview of astronomy and our understanding of the universe, aimed at students outside physics. It was taken alongside the engineering programme to broaden my scientific perspective. The course was examined through a series of assignments and quizzes.",
+      "sv": "En bred och lättillgänglig översikt av astronomi och vår förståelse av universum, riktad till studenter utanför fysikområdet. Kursen lästes vid sidan av ingenjörsprogrammet för att bredda mitt naturvetenskapliga perspektiv. Kursen examinerades genom en serie inlämningsuppgifter och quiz."
+    }
+  },
+  {
+    "name": {
+      "en": "Physics 1",
+      "sv": "Fysik 1"
+    },
+    "code": "F0004T",
+    "credits": 7.5,
+    "level": "basic",
+    "completedOn": "2024-08-22",
+    "summary": {
+      "en": "Classical mechanics and thermodynamics: kinematics, Newton's laws, friction, work and energy, momentum and collisions, and torque and equilibrium. The thermodynamics part covered heat and temperature, heat transfer, ideal gases, the first and second laws, and heat engines. Labs trained experimental methodology such as curve fitting, linearisation and dimensional analysis.",
+      "sv": "Klassisk mekanik och termodynamik: kinematik, Newtons lagar, friktion, arbete och energi, rörelsemängd och stötar samt kraftmoment och jämvikt. Termodynamikdelen tog upp värme och temperatur, värmetransport, ideala gaser, första och andra huvudsatsen samt värmemaskiner. Laborationerna tränade experimentell metodik som kurvanpassning, linjärisering och dimensionsanalys."
+    }
+  },
+  {
+    "name": {
+      "en": "Mobile and Distributed Computing Systems",
+      "sv": "Mobila och distribuerade datorsystem"
+    },
+    "code": "D7024E",
+    "credits": 7.5,
+    "level": "advanced",
+    "completedOn": "2024-12-11",
+    "summary": {
+      "en": "Principles of distributed systems, from networking and peer-to-peer overlays to blockchain technologies such as Bitcoin and Ethereum. The main lab was implementing the Kademlia distributed hash table in a team, run as a series of sprints. Paper reviews, seminars and a home exam completed the course.",
+      "sv": "Principer för distribuerade system, från nätverk och peer-to-peer-överlägg till blockkedjetekniker som Bitcoin och Ethereum. Huvudlaborationen var att i team implementera den distribuerade hashtabellen Kademlia, genomförd som en serie sprintar. Artikelgranskningar, seminarier och en hemtentamen kompletterade kursen."
+    }
+  },
+  {
+    "name": {
+      "en": "Advanced Project Management",
+      "sv": "Avancerad projektledning"
+    },
+    "code": "O7008N",
+    "credits": 7.5,
+    "level": "advanced",
+    "completedOn": "2025-01-08",
+    "summary": {
+      "en": "Advanced project management, with a focus on concepts and assumptions behind large and complex projects, including megaprojects. It combined a literature seminar and literature study with a group case study. The case study went from a project plan through a seminar to a final report.",
+      "sv": "Avancerad projektledning med fokus på begrepp och antaganden bakom stora och komplexa projekt, inklusive megaprojekt. Kursen kombinerade ett litteraturseminarium och en litteraturstudie med en fallstudie i grupp. Fallstudien gick från projektplan via seminarium till en slutrapport."
+    }
+  },
+  {
+    "name": {
+      "en": "Design of Dynamic Web Systems",
+      "sv": "Design av dynamiska webbsystem"
+    },
+    "code": "M7011E",
+    "credits": 7.5,
+    "level": "advanced",
+    "completedOn": "2025-01-17",
+    "summary": {
+      "en": "How dynamic web systems are built, starting from how HTTP works and writing a simple HTTP server in Python. It went on to databases and web frameworks, using Django in a Python development environment with version control. The course ended with a larger web project presented in a final demo.",
+      "sv": "Hur dynamiska webbsystem byggs, med start i hur HTTP fungerar och att skriva en enkel HTTP-server i Python. Kursen gick vidare till databaser och webbramverk med Django i en Python-utvecklingsmiljö med versionshantering. Kursen avslutades med ett större webbprojekt som presenterades i en slutdemo."
+    }
+  },
+  {
+    "name": {
+      "en": "Project in Information and Communication Technology",
+      "sv": "Projekt i informations- och kommunikationsteknik"
+    },
+    "code": "D7017E",
+    "credits": 15.0,
+    "level": "advanced",
+    "completedOn": "2025-01-21",
+    "summary": {
+      "en": "A five-month team project in a group of about eight, carried out with an external partner. My group built FO.Car together with Future Ordering, where I developed backend APIs and set up the VoIP infrastructure. The course included a project plan, a mid-term evaluation, a study of software development in large IT companies, and a final report on my own contribution.",
+      "sv": "Ett femmånaders projekt i en grupp om cirka åtta personer, genomfört tillsammans med en extern partner. Min grupp byggde FO.Car tillsammans med Future Ordering, där jag utvecklade backend-API:er och satte upp VoIP-infrastrukturen. Kursen innehöll en projektplan, en halvtidsutvärdering, en studie av mjukvaruutveckling i stora IT-företag och en slutrapport om mitt eget bidrag."
+    }
+  },
+  {
+    "name": {
+      "en": "Neural Networks and Learning Machines",
+      "sv": "Neuronnät och lärande maskiner"
+    },
+    "code": "D7046E",
+    "credits": 7.5,
+    "level": "advanced",
+    "completedOn": "2025-03-28",
+    "highlighted": true,
+    "summary": {
+      "en": "Artificial neural networks from their history and fundamentals to modern learning machines, including spiking neural networks and active learning. It included a guest lecture on differentiable programming and a series of computer exercises. The course ended with a project, peer-reviewed self-assessment and an oral exam.",
+      "sv": "Artificiella neuronnät från historia och grunder till moderna lärande maskiner, inklusive spikande neuronnät och aktiv inlärning. Kursen innehöll en gästföreläsning om differentierbar programmering och en serie datorövningar. Kursen avslutades med ett projekt, självvärdering med kamratgranskning och en muntlig examination."
+    }
+  },
+  {
+    "name": {
+      "en": "Linear Algebra and Integral Calculus",
+      "sv": "Linjär algebra och integralkalkyl"
+    },
+    "code": "M0048M",
+    "credits": 7.5,
+    "level": "basic",
+    "completedOn": "2025-06-02",
+    "summary": {
+      "en": "Linear algebra with vectors, matrices and systems of linear equations, combined with single-variable integral calculus. The course built the mathematical foundation for later courses in physics, control and machine learning. A report in MATLAB complemented the written exam.",
+      "sv": "Linjär algebra med vektorer, matriser och linjära ekvationssystem, kombinerat med integralkalkyl i en variabel. Kursen lade den matematiska grunden för senare kurser i fysik, reglerteknik och maskininlärning. En rapport i MATLAB kompletterade den skriftliga tentamen."
+    }
+  },
+  {
+    "name": {
+      "en": "Declarative Languages",
+      "sv": "Deklarativa språk"
+    },
+    "code": "D7012E",
+    "credits": 7.5,
+    "level": "advanced",
+    "completedOn": "2025-06-06",
+    "summary": {
+      "en": "Declarative programming paradigms, where you describe what to compute rather than how. The first part covered functional programming in Haskell and the second logic programming in Prolog, with three labs in each. Each lab was demonstrated and graded, alongside a written exam.",
+      "sv": "Deklarativa programmeringsparadigm, där man beskriver vad som ska beräknas snarare än hur. Den första delen tog upp funktionell programmering i Haskell och den andra logikprogrammering i Prolog, med tre laborationer i varje. Varje laboration demonstrerades och bedömdes, vid sidan av en skriftlig tentamen."
+    }
+  },
+  {
+    "name": {
+      "en": "Digital Electronics",
+      "sv": "Digitalteknik"
+    },
+    "code": "D0011E",
+    "credits": 7.5,
+    "level": "basic",
+    "completedOn": "2025-07-16",
+    "summary": {
+      "en": "Design of digital logic, from combinational and sequential circuits to larger digital systems. Labs were done in Xilinx Vivado using a hardware description language (Veryl), with peer review between lab groups. Quizzes and a written exam completed the course.",
+      "sv": "Design av digital logik, från kombinatoriska och sekventiella kretsar till större digitala system. Laborationerna gjordes i Xilinx Vivado med ett hårdvarubeskrivande språk (Veryl), med kamratgranskning mellan labbgrupper. Quiz och en skriftlig tentamen kompletterade kursen."
+    }
+  },
+  {
+    "name": {
+      "en": "Introductory Electrical Engineering",
+      "sv": "Grundkurs i elektroteknik"
+    },
+    "code": "E0013E",
+    "credits": 7.5,
+    "level": "basic",
+    "completedOn": "2025-10-30",
+    "summary": {
+      "en": "A broad introduction to electrical engineering for engineers of all specialisations, building on complex numbers and ordinary differential equations. It covered the fundamental principles for analysing electrical circuits. Circuit simulations and four practical labs complemented a written exam.",
+      "sv": "En bred introduktion till elektroteknik för ingenjörer oavsett inriktning, som bygger vidare på komplexa tal och ordinära differentialekvationer. Kursen tog upp grundläggande principer för att analysera elektriska kretsar. Kretssimuleringar och fyra praktiska laborationer kompletterade en skriftlig tentamen."
+    }
+  },
+  {
+    "name": {
+      "en": "Linear Algebra and Differential Equations",
+      "sv": "Linjär algebra och differentialekvationer"
+    },
+    "code": "M0049M",
+    "credits": 7.5,
+    "level": "basic",
+    "completedOn": "2025-12-17",
+    "summary": {
+      "en": "Three main parts: complex numbers, linear algebra and differential equations. The course gave tools for modelling and solving problems that recur throughout engineering. It was examined with quizzes, short tests, a MATLAB assignment and a written exam.",
+      "sv": "Tre huvudsakliga moment: komplexa tal, linjär algebra och differentialekvationer. Kursen gav verktyg för att modellera och lösa problem som återkommer inom hela ingenjörsområdet. Kursen examinerades med quiz, duggor, en MATLAB-inlämning och en skriftlig tentamen."
+    }
+  },
+  {
+    "name": {
+      "en": "Mathematical Statistics",
+      "sv": "Matematisk statistik"
+    },
+    "code": "S0001M",
+    "credits": 7.5,
+    "level": "basic",
+    "completedOn": "2026-01-15",
+    "summary": {
+      "en": "Probability theory and statistics for engineers: random variables, probability distributions and statistical inference. The course emphasised using statistical methods to draw conclusions from data. Three computer labs and web quizzes complemented the written exam.",
+      "sv": "Sannolikhetsteori och statistik för ingenjörer: stokastiska variabler, sannolikhetsfördelningar och statistisk inferens. Kursen betonade att använda statistiska metoder för att dra slutsatser ur data. Tre datorlaborationer och webbquiz kompletterade den skriftliga tentamen."
+    }
+  },
+  {
+    "name": {
+      "en": "Quantum Physics for the Curious",
+      "sv": "Kvantfysik för nyfikna"
+    },
+    "code": "F0014T",
+    "credits": 7.5,
+    "level": "basic",
+    "completedOn": "2026-03-12",
+    "summary": {
+      "en": "A non-mathematical overview of quantum physics: what it says, what it means and how it can be interpreted. The course followed Nick Herbert's book \"Quantum Reality\". It was examined through quizzes and written assignments.",
+      "sv": "En icke-matematisk översikt av kvantfysiken: vad den säger, vad den betyder och hur den kan tolkas. Kursen utgick från Nick Herberts bok \"Quantum Reality\". Kursen examinerades genom quiz och skriftliga inlämningsuppgifter."
+    }
+  },
+  {
+    "name": {
+      "en": "Industrial Economics with a Sustainability Perspective",
+      "sv": "Industriell ekonomi med ett hållbarhetsperspektiv"
+    },
+    "code": "G0010N",
+    "credits": 7.5,
+    "level": "basic",
+    "completedOn": "2026-03-17",
+    "summary": {
+      "en": "How companies work and create value, seen from a sustainability perspective. Modules covered corporate social responsibility, markets and business cycles, the value-creating system, management and organisation, the financial system, sustainable development and gender equality. It was examined through group assignments, seminars, peer review and a written exam.",
+      "sv": "Hur företag fungerar och skapar värde, sett ur ett hållbarhetsperspektiv. Kursen tog upp företagets samhällsansvar, marknader och konjunkturer, det värdeskapande systemet, ledning och organisering, det finansiella systemet, hållbar utveckling och jämställdhet. Kursen examinerades genom gruppuppgifter, seminarier, kamratgranskning och en skriftlig tentamen."
+    }
+  },
+  {
+    "name": {
+      "en": "Software Engineering",
+      "sv": "Programvaruteknik"
+    },
+    "code": "D7032E",
+    "credits": 7.5,
+    "level": "advanced",
+    "completedOn": "2026-06-18",
+    "highlighted": true,
+    "summary": {
+      "en": "Software design and architecture: design principles such as SOLID, Booch's metrics, and creational, structural, behavioural, concurrency, cloud and architectural design patterns. It also covered quality attributes such as availability, modifiability, integrability, testability and performance. An assignment evaluated a real software design using SOLID and Booch's metrics, alongside a lab and a home exam.",
+      "sv": "Mjukvarudesign och arkitektur: designprinciper som SOLID, Boochs mått samt skapande, strukturella, beteendemässiga, samtidighets-, moln- och arkitekturella designmönster. Kursen tog även upp kvalitetsattribut som tillgänglighet, modifierbarhet, integrerbarhet, testbarhet och prestanda. En uppgift utvärderade en verklig mjukvarudesign med SOLID och Boochs mått, vid sidan av en laboration och en hemtentamen."
+    }
+  },
+  {
+    "name": {
+      "en": "Modelling and Control",
+      "sv": "Modellering och reglering"
+    },
+    "code": "R0004E",
+    "credits": 7.5,
+    "level": "basic",
+    "completedOn": "2026-08-26",
+    "summary": {
+      "en": "Mathematical modelling of dynamic systems and the fundamentals of automatic control. The course connected different ways of describing a system and used them to design and analyse feedback control. Three labs and a report on the relationships between different system descriptions complemented the written exam.",
+      "sv": "Matematisk modellering av dynamiska system och grunderna i reglerteknik. Kursen kopplade samman olika sätt att beskriva ett system och använde dem för att designa och analysera återkopplad reglering. Tre laborationer och en rapport om sambandet mellan olika systembeskrivningar kompletterade den skriftliga tentamen."
+    }
+  }
 ]
