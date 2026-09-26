@@ -194,6 +194,7 @@
     "credits": 7.5,
     "level": "advanced",
     "completedOn": "2023-10-16",
+    "highlighted": true,
     "summary": {
       "en": "Advanced data structures beyond the standard toolkit, studied through research papers and reference literature. The course consisted of a series of individual assignments followed by a project. Solutions required both implementing the structures and analysing their performance.",
       "sv": "Avancerade datastrukturer bortom standardverktygen, studerade genom forskningsartiklar och referenslitteratur. Kursen bestod av en serie individuella uppgifter följda av ett projekt. Lösningarna krävde både implementation av strukturerna och analys av deras prestanda."
@@ -208,7 +209,6 @@
     "credits": 7.5,
     "level": "basic",
     "completedOn": "2023-12-13",
-    "highlighted": true,
     "summary": {
       "en": "What it means for a machine to learn and classify, and why it is useful. Topics included data import and analysis, instance-based learning, clustering and decision-based classifiers, with weekly quizzes and summary reports. The course ended with a group project presented orally.",
       "sv": "Vad det innebär att en maskin lär sig och klassificerar, och varför det är användbart. Kursen tog upp dataimport och dataanalys, instansbaserad inlärning, klustring och beslutsbaserade klassificerare, med veckovisa quiz och sammanfattande rapporter. Kursen avslutades med ett grupprojekt som presenterades muntligt."
@@ -279,6 +279,7 @@
     "credits": 7.5,
     "level": "advanced",
     "completedOn": "2025-01-08",
+    "highlighted": true,
     "summary": {
       "en": "Advanced project management, with a focus on concepts and assumptions behind large and complex projects, including megaprojects. It combined a literature seminar and literature study with a group case study. The case study went from a project plan through a seminar to a final report.",
       "sv": "Avancerad projektledning med fokus på begrepp och antaganden bakom stora och komplexa projekt, inklusive megaprojekt. Kursen kombinerade ett litteraturseminarium och en litteraturstudie med en fallstudie i grupp. Fallstudien gick från projektplan via seminarium till en slutrapport."
