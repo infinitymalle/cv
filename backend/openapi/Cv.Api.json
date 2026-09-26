@@ -239,7 +239,6 @@
           "summary",
           "credits",
           "level",
-          "completedOn",
           "highlighted"
         ],
         "type": "object",
@@ -265,10 +264,6 @@
           },
           "level": {
             "$ref": "#/components/schemas/CourseLevel"
-          },
-          "completedOn": {
-            "type": "string",
-            "format": "date"
           },
           "highlighted": {
             "type": "boolean"

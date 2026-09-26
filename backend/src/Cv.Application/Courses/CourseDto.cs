@@ -10,5 +10,4 @@ public sealed record CourseDto(
     string? Summary,
     decimal Credits,
     CourseLevel Level,
-    DateOnly CompletedOn,
     bool Highlighted);

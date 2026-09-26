@@ -23,15 +23,18 @@ public class CourseServiceTests
     }
 
     [Fact]
-    public async Task Courses_are_sorted_most_recently_completed_first()
+    public async Task Key_courses_come_first_then_advanced_then_basic_alphabetically()
     {
         var service = CreateService(
-            NewCourse("Old", completedOn: new DateOnly(2021, 1, 1)),
-            NewCourse("New", completedOn: new DateOnly(2026, 1, 1)));
+            NewCourse("Basic B"),
+            NewCourse("Advanced") with { Level = CourseLevel.Advanced },
+            NewCourse("Basic A"),
+            NewCourse("Key basic") with { Highlighted = true },
+            NewCourse("Key advanced") with { Highlighted = true, Level = CourseLevel.Advanced });
 
         var overview = await service.GetOverviewAsync(Language.English, Ct);
 
-        Assert.Equal(["New", "Old"], overview.Courses.Select(c => c.Name));
+        Assert.Equal(["Key advanced", "Key basic", "Advanced", "Basic A", "Basic B"], overview.Courses.Select(c => c.Name));
     }
 
     [Fact]

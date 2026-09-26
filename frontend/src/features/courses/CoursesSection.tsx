@@ -3,8 +3,11 @@ import type { Course, CourseOverview } from "../../api/client";
 import { AsyncContent } from "../../components/AsyncContent";
 import { Section } from "../../components/Section";
 import { useLanguage, useTranslations } from "../../i18n/LanguageContext";
-import { formatMonth, formatNumber } from "../../lib/format";
+import { formatNumber } from "../../lib/format";
 import { useCourses } from "./queries";
+
+/** How many courses are visible before "Show all". The API already sorts the most relevant first. */
+const initiallyVisible = 6;
 
 export function CoursesSection() {
   const t = useTranslations();
@@ -21,84 +24,72 @@ function Courses({ overview }: { overview: CourseOverview }) {
   const t = useTranslations();
   const [showAll, setShowAll] = useState(false);
 
-  const keyCourses = overview.courses.filter((c) => c.highlighted);
+  const { courses } = overview;
+  const visible = showAll ? courses : courses.slice(0, initiallyVisible);
+  const hiddenCount = courses.length - initiallyVisible;
 
   return (
     <>
-      <p className="muted">{t.creditsCompleted(formatNumber(overview.totalCredits, language), overview.courses.length)}</p>
+      <p className="muted">{t.creditsCompleted(formatNumber(overview.totalCredits, language), courses.length)}</p>
 
-      {keyCourses.length > 0 && (
-        <>
-          <h3 className="subheading">{t.keyCourses}</h3>
-          <ul className="key-courses">
-            {keyCourses.map((course) => (
-              <li key={courseKey(course)} className="key-course">
-                <CourseItem course={course} />
-              </li>
-            ))}
-          </ul>
-        </>
-      )}
+      <ul id="course-list" className="course-list">
+        {visible.map((course) => (
+          <li key={course.code ?? course.name} className="course">
+            <CourseRow course={course} />
+          </li>
+        ))}
+      </ul>
 
-      <button
-        type="button"
-        className="text-button"
-        aria-expanded={showAll}
-        aria-controls="all-courses"
-        onClick={() => setShowAll((value) => !value)}
-      >
-        {showAll ? t.hideAllCourses : t.showAllCourses(overview.courses.length)}
-      </button>
-
-      {showAll && (
-        <ul id="all-courses" className="course-list" aria-label={t.allCourses}>
-          {overview.courses.map((course) => (
-            <li key={courseKey(course)} className="course-row">
-              <CourseItem course={course} showMeta />
-            </li>
-          ))}
-        </ul>
+      {hiddenCount > 0 && (
+        <button
+          type="button"
+          className="text-button"
+          aria-expanded={showAll}
+          aria-controls="course-list"
+          onClick={() => setShowAll((value) => !value)}
+        >
+          {showAll ? t.hideAllCourses : t.showAllCourses(courses.length)}
+        </button>
       )}
     </>
   );
 }
 
-const courseKey = (course: Course) => course.code ?? `${course.name}-${course.completedOn}`;
-
-/** A course name that expands to show its summary when clicked (if it has one). */
-function CourseItem({ course, showMeta = false }: { course: Course; showMeta?: boolean }) {
+/** One course per row: name and details, expanding to show the summary when clicked. */
+function CourseRow({ course }: { course: Course }) {
   const { language } = useLanguage();
   const t = useTranslations();
   const [open, setOpen] = useState(false);
   const summaryId = useId();
 
   const heading = (
-    <>
-      <span className="course-name">{course.name}</span>
-      {showMeta && (
-        <span className="course-meta muted small">
-          {course.code && <>{course.code} · </>}
-          {t.courseLevel[course.level]} · {formatNumber(course.credits, language)} {t.creditsUnit} ·{" "}
-          {formatMonth(course.completedOn, language)}
-        </span>
-      )}
-    </>
+    <span className="course-heading">
+      <span className="course-name">
+        {course.name}
+        {course.highlighted && <span className="badge">{t.keyCourse}</span>}
+      </span>
+      <span className="course-meta">
+        {[course.code, t.courseLevel[course.level], `${formatNumber(course.credits, language)} ${t.creditsUnit}`]
+          .filter(Boolean)
+          .join(" · ")}
+      </span>
+    </span>
   );
 
   if (!course.summary) {
-    return <div className="course-heading">{heading}</div>;
+    return <div className="course-row">{heading}</div>;
   }
 
   return (
     <>
       <button
         type="button"
-        className="course-toggle"
+        className="course-row course-toggle"
         aria-expanded={open}
         aria-controls={summaryId}
         onClick={() => setOpen((value) => !value)}
       >
-        <span className="course-heading">{heading}</span>
+        {heading}
         <span className="chevron" aria-hidden="true" />
       </button>
       {open && (

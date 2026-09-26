@@ -111,8 +111,6 @@ export interface components {
             /** Format: double */
             credits: number;
             level: components["schemas"]["CourseLevel"];
-            /** Format: date */
-            completedOn: string;
             highlighted: boolean;
         };
         /** @enum {unknown} */
