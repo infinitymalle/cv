@@ -1,0 +1,27 @@
+# SITE_ADDRESS comes from .env: "localhost" for testing, your domain (e.g. "cv.example.com") in production.
+# With a real domain, Caddy fetches and renews HTTPS certificates automatically.
+{$SITE_ADDRESS:localhost} {
+	encode zstd gzip
+
+	header {
+		Strict-Transport-Security "max-age=31536000; includeSubDomains"
+		Content-Security-Policy "default-src 'self'; img-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'"
+		X-Content-Type-Options "nosniff"
+		X-Frame-Options "DENY"
+		Referrer-Policy "strict-origin-when-cross-origin"
+		Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
+		-Server
+	}
+
+	# Everything under /api goes to the .NET backend (not reachable from outside otherwise).
+	handle /api/* {
+		reverse_proxy api:8080
+	}
+
+	# Everything else is the React app. Unknown paths fall back to index.html for client-side routing.
+	handle {
+		root * /srv
+		try_files {path} /index.html
+		file_server
+	}
+}

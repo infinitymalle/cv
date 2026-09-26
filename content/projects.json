@@ -1,0 +1,20 @@
+[
+  {
+    "slug": "cv-website",
+    "title": "CV website",
+    "summary": "This site. An ASP.NET Core API with a layered architecture, a React + TypeScript frontend, and Docker + Caddy for hosting.",
+    "technologies": ["C#", "ASP.NET Core", "React", "TypeScript", "Docker", "Caddy"],
+    "startedOn": "2026-09-26",
+    "finishedOn": null,
+    "repositoryUrl": null
+  },
+  {
+    "slug": "example-course-project",
+    "title": "Example course project (replace me)",
+    "summary": "A placeholder showing the format. Edit content/projects.json to add your own projects; no code changes needed.",
+    "technologies": ["Java"],
+    "startedOn": "2025-01-20",
+    "finishedOn": "2025-03-14",
+    "repositoryUrl": "https://github.com/"
+  }
+]

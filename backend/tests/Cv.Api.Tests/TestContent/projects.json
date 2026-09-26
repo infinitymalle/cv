@@ -1,0 +1,18 @@
+[
+  {
+    "slug": "test-project-old",
+    "title": "Old test project",
+    "summary": "Used by the integration tests.",
+    "technologies": ["C#"],
+    "startedOn": "2024-01-01",
+    "finishedOn": "2024-06-01",
+    "repositoryUrl": "https://example.com/old"
+  },
+  {
+    "slug": "test-project-new",
+    "title": "New test project",
+    "summary": "Used by the integration tests.",
+    "technologies": [],
+    "startedOn": "2026-01-01"
+  }
+]
